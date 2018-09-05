@@ -42,19 +42,19 @@ Details and steps to reproduce the behaviour are listed below
   - Use the `switch entry` button to switch between entry1 and entry2
   
 #### The results here are as expected
-Each entrypoint receives a dedicated runtimeChunk and output to `js/[name].js` 
-Each entrypoint executes a separate instance of `bindings.js` 
-When we update the store with `newValue: 'newValue'` at entrypoint1 - the change is not reflected in the store at entrypoint2
+  - Each entrypoint receives a dedicated runtimeChunk and output to `js/[name].js` 
+  - Each entrypoint executes a separate instance of `bindings.js` 
+  - When we update the store with `newValue: 'newValue'` at entrypoint1 - the change is not reflected in the store at entrypoint2
 
-  - To run with runTimeChunk use `npm run dev-with-runtimeChunk`
+To run with runTimeChunk use `npm run dev-with-runtimeChunk`
 
 #### Expected Behaviour
-A single runtimeChunk is created and output to `js/shared.js`
-Entrypoints only contain relevant modules (NO RUNTIME CODE) and output to `js/[name].js`
+  - A single runtimeChunk is created and output to `js/shared.js`
+  - Entrypoints only contain relevant modules (NO RUNTIME CODE) and output to `js/[name].js`
 
 #### Actual Behaviour
-A single runtimeChunk is created and output to `js/shared.js`
-Entrypoints are not located at `js/[name].js` and so return `index.html`
+  - A single runtimeChunk is created and output to `js/shared.js`
+  - Entrypoints are not located at `js/[name].js` and so return `index.html`
 
 
 
@@ -94,9 +94,9 @@ Config does not set `output.filename`
   - Use the `switch entry` button to switch between entry1 and entry2
   
 #### The results here are as expected
-A single runtimeChunk is created and output to `shared.js`
-Each entrypoint only contains necessary modules (NO RUNTIME CHUNK) and output to `[name].js` 
+  - A single runtimeChunk is created and output to `shared.js`
+  - Each entrypoint only contains necessary modules (NO RUNTIME CHUNK) and output to `[name].js` 
 `bindings.js` is only executed once from `shared.js`
-Store is consistent across entrypoints
+  - Store is consistent across entrypoints
 
 While this setup will work for dev - it will not be sufficient for production builds as we will need to specify output.filename.
