@@ -37,6 +37,9 @@ module.exports = {
         }
       }
     },
+    runtimeChunk: {
+      name: 'shared',
+    },
   },
   mode: 'development', 
   devtool: 'eval', 

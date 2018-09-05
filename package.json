@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm install && npm run frontend",
-    "hot-server": "webpack-serve --config webpack-dev.config.js",
-    "frontend": "npm-run-all --parallel hot-server start-dev",
+    "dev-without-runtimeChunk": "npm install && npm run frontend-1",
+    "dev-with-runtimeChunk": "npm install && npm run frontend-2",
+    "hot-server-1": "webpack-serve --config webpack-dev.config.js",
+    "hot-server-2": "webpack-serve --config webpack-dev2.config.js",
+    "frontend-1": "npm-run-all --parallel hot-server-1 start-dev",
+    "frontend-2": "npm-run-all --parallel hot-server-2 start-dev",
     "start-dev": "nodemon --inspect index.js",
     "build": "webpack --config webpack-dev.config.js",
     "lint": "eslint src --ext js,jsx"
