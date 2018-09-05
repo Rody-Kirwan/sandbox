@@ -13,7 +13,6 @@ module.exports = {
   output: {
     pathinfo: true,
     publicPath: '/',
-    filename: 'js/[name].js',
     chunkFilename: '[id].js'
   },
   module: {
