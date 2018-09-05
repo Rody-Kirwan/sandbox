@@ -1,6 +1,10 @@
 # webpack-single-runtime
 Sandbox to display unexpected behaviour using a single runtimeChunk and output.filename
 
+This example may be a bit over elaborate in order to recreate the issue we are experiencing but I wanted to simulate - as much as possible - the setup of the real application. `index.html` is rendered from a node server as the inclusion of certain script tags is determined by environment-specific configs.
+
+This is also the reason for using separate entrypoints for each of these scripts. However, each script will require shared resources - e.g. a common application store.
+
 I have created two branches to display unexpected behaviour when using a single `runtimeChunk` with `output.filename`
 Details of behaviour listed below
 
@@ -92,3 +96,5 @@ A single runtimeChunk is created and output to `shared.js`
 Each entrypoint only contains necessary modules (NO RUNTIME CHUNK) and output to `[name].js` 
 `bindings.js` is only executed once from `shared.js`
 Store is consistent across entrypoints
+
+While this setup will work for dev - it will not be sufficient for production builds as we will need to specify output.filename.
