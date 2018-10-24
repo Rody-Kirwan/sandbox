@@ -9,6 +9,21 @@ I have added 2 endpoints to an express.js server @ `server/app.js`
   - `/test`
   - `/.test`
 
+```
+  // server/app.js
+
+  // Endpoint One
+  app.get('/test', function(req, res) {
+    res.status(200).send('Express Server: Request Received')
+  })
+  
+  
+  // Endpoint Two
+  app.get('/.test', function(req, res) {
+    res.status(200).send('Express Server: Request Received')
+  })
+```
+
 
 #### Steps
   - To run application use `npm run dev`
