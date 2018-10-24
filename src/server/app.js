@@ -15,7 +15,29 @@ function setup() {
   app.engine('html', require('ejs').renderFile);
   app.set('view engine', 'html');
 
+
+
+  
+  
+  
+  // Endpoint One
+  app.get('/test', function(req, res) {
+    res.status(200).send('normal endpoint working')
+  })
+  
+  
+  // Endpoint Two
+  app.get('/.test', function(req, res) {
+    res.status(200).send('dot notation endpoint never hit')
+  })
+
+
+
+
+
   app.use(function (req, res) {
+
+    console.log('lkjhgfdfghj')
     // Prevent cacheing
     res.set({
       'cache-control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
@@ -39,5 +61,3 @@ function start(done) {
       done()
   })
 }
-
-// start();
