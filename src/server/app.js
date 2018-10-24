@@ -22,13 +22,13 @@ function setup() {
   
   // Endpoint One
   app.get('/test', function(req, res) {
-    res.status(200).send('normal endpoint working')
+    res.status(200).send('Express Server: Request Received')
   })
   
   
   // Endpoint Two
   app.get('/.test', function(req, res) {
-    res.status(200).send('dot notation endpoint never hit')
+    res.status(200).send('Express Server: Request Received')
   })
 
 

@@ -3,6 +3,9 @@ Sandbox to display unexpected behaviour webpack-dev-server
 
 Running on
   - node@v8
+  - webpack@v4.17.0
+  - webpack-cli@v2.0.11
+  - webpack-dev-server@v3.1.10
 
 ### Setup
 I have added 2 endpoints to an express.js server @ `server/app.js`
