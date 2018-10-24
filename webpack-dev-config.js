@@ -14,7 +14,7 @@ module.exports = {
     pathinfo: true,
     publicPath: '/',
     filename: 'js/[name].js',
-    chunkFilename: '[id].js'
+    chunkFilename: 'js/[name].js'
   },
   module: {
     rules: [
@@ -43,16 +43,14 @@ module.exports = {
   },
   mode: 'development', 
   devtool: 'eval', 
-  serve: {
-    content: [__dirname],
+  devServer: {
     port: 5000,
-    add: (app, middleware) => {
-      middleware.webpack()
-      middleware.content()
-
-      app.use(convert(proxy({
-        target: 'http://localhost:3000'
-      })))
-    }
+    noInfo: true,
+    proxy: {
+      '*': 'http://localhost:3000'
+    },
+    stats: {
+      colors: true
+    },
   }
 };
